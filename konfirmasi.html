@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Item Berhasil Dikirim</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:#1A3A6E;
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:32px 16px;
+  position:relative;overflow:hidden;
+}
+body::before{content:'';position:fixed;top:-140px;right:-140px;width:420px;height:420px;background:#FFD600;border-radius:50%;opacity:0.10;pointer-events:none;}
+body::after{content:'';position:fixed;bottom:-100px;left:-100px;width:320px;height:320px;background:#FFD600;border-radius:50%;opacity:0.06;pointer-events:none;}
+
+.card{
+  background:#fff;border-radius:24px;
+  box-shadow:0 24px 80px rgba(10,20,50,0.28);
+  width:100%;max-width:480px;
+  padding:48px 40px;
+  text-align:center;
+  position:relative;z-index:1;
+}
+.icon-wrap{
+  width:72px;height:72px;border-radius:50%;
+  background:#E6F7EE;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 24px;
+  animation:pop 0.4s cubic-bezier(0.175,0.885,0.32,1.275) both;
+}
+@keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+
+h1{
+  font-family:'Syne',sans-serif;font-size:26px;font-weight:800;
+  color:#0D1B2A;margin-bottom:10px;
+}
+.sub{font-size:15px;color:#6B7C93;line-height:1.6;margin-bottom:32px;}
+
+.info-box{
+  background:#F5F6FA;border-radius:14px;
+  padding:20px 24px;margin-bottom:32px;
+  text-align:left;
+}
+.info-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:0.5px solid #e8edf5;}
+.info-row:last-child{border-bottom:none;}
+.info-key{font-size:13px;color:#6B7C93;}
+.info-val{font-size:13px;font-weight:500;color:#0D1B2A;text-align:right;max-width:260px;word-break:break-word;}
+.status-badge{
+  display:inline-block;
+  background:#FEF3C7;color:#D97706;
+  font-family:'Syne',sans-serif;font-size:11px;font-weight:700;
+  padding:4px 12px;border-radius:100px;letter-spacing:0.06em;
+}
+
+.btn{
+  display:block;width:100%;
+  padding:15px;border-radius:14px;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:15px;
+  text-decoration:none;text-align:center;
+  transition:opacity 0.15s,transform 0.12s;
+  margin-bottom:10px;cursor:pointer;border:none;
+}
+.btn:hover{opacity:0.88;transform:translateY(-1px);}
+.btn-yellow{background:#FFD600;color:#1A3A6E;box-shadow:0 4px 20px rgba(255,214,0,0.3);}
+.btn-outline{background:transparent;border:1.5px solid #dde3ef;color:#6B7C93;font-family:'Syne',sans-serif;font-weight:800;font-size:15px;width:100%;padding:15px;border-radius:14px;cursor:pointer;transition:opacity 0.15s;}
+
+.id-note{font-size:11px;color:#A0AEBE;margin-top:16px;}
+.id-note span{font-family:monospace;background:#F0F3FA;padding:2px 6px;border-radius:4px;}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="icon-wrap">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1DA85A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+  </div>
+  <h1>Item Berhasil Dikirim!</h1>
+  <p class="sub">Item kamu sudah kami terima dan sedang menunggu review. Kami akan segera mengaktifkannya.</p>
+
+  <div class="info-box">
+    <div class="info-row">
+      <span class="info-key">Nama Item</span>
+      <span class="info-val" id="info-nama">—</span>
+    </div>
+    <div class="info-row">
+      <span class="info-key">Penjual</span>
+      <span class="info-val" id="info-penjual">—</span>
+    </div>
+    <div class="info-row">
+      <span class="info-key">Status</span>
+      <span class="info-val"><span class="status-badge">Menunggu Review</span></span>
+    </div>
+  </div>
+
+  <a href="index.html" class="btn btn-yellow">Kembali ke Halaman Utama</a>
+  <button class="btn-outline" onclick="window.location.href='post.html'">Kirim Item Lagi</button>
+
+  <p class="id-note">ID Pesanan: <span id="info-id">—</span></p>
+</div>
+
+<script>
+  const p = new URLSearchParams(window.location.search);
+  document.getElementById('info-nama').textContent    = p.get('nama')    ? decodeURIComponent(p.get('nama'))    : '—';
+  document.getElementById('info-penjual').textContent = p.get('penjual') ? decodeURIComponent(p.get('penjual')) : '—';
+  document.getElementById('info-id').textContent      = p.get('id')      || '—';
+</script>
+</body>
+</html>

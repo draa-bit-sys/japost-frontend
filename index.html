@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Post Itemku</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #0D1B2A;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -160px; right: -160px;
+            width: 500px; height: 500px;
+            background: #FFD600;
+            border-radius: 50%;
+            opacity: 0.07;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -120px; left: -100px;
+            width: 380px; height: 380px;
+            background: #2255A4;
+            border-radius: 50%;
+            opacity: 0.18;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 620px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .chip {
+            display: inline-block;
+            background: #FFD600;
+            color: #0D1B2A;
+            font-family: 'Syne', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 100px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(32px, 6vw, 52px);
+            font-weight: 800;
+            line-height: 1.08;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: #FFD600;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.75;
+            color: #A8BACE;
+            margin-bottom: 36px;
+            max-width: 520px;
+        }
+
+        h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #FFD600;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: rgba(255,255,255,0.04);
+            border: 0.5px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 16px 20px;
+            font-size: 15px;
+            color: #C8D8E8;
+            line-height: 1.6;
+        }
+
+        ul li::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            min-width: 8px;
+            background: #FFD600;
+            border-radius: 50%;
+            margin-top: 7px;
+        }
+
+        ul li strong {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .ayopost {
+            display: inline-block;
+            background: #FFD600;
+            color: #0D1B2A;
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 15px;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 14px;
+            box-shadow: 0 6px 28px rgba(255,214,0,0.3);
+            transition: background 0.18s, transform 0.12s, box-shadow 0.18s;
+        }
+
+        .ayopost:hover {
+            background: #FFE633;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 36px rgba(255,214,0,0.45);
+        }
+
+        .ayopost:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="chip">Itemku Japost</div>
+        <h1>Jasa Post <span>Itemku</span></h1>
+        <p>Halo! Kamu lagi cari jasa posting item di Itemku tapi males ribet ngurusin sendiri? Tenang, aku siap bantu! 🎮 Di sini kamu bisa titip posting item kamu — mulai dari akun game, voucher, in-game item, sampai barang digital lainnya. Prosesnya cepat, aman, dan pastinya anti-ribet.</p>
+
+        <h4>Kenapa Pakai Japost Ini?</h4>
+        <ul>
+            <li><strong>Cepat:</strong> Item kamu langsung diposting setelah data diterima, nggak perlu nunggu lama.</li>
+            <li><strong>Aman:</strong> Data dan item kamu dijaga dengan baik, proses transparan dari awal sampai selesai.</li>
+        </ul>
+
+        <a href="post.html" class="ayopost">Ayo Post →</a>
+    </div>
+</body>
+</html>
